@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://djpmn5kc62dsy"]
+
+[ext_resource type="Texture2D" uid="uid://btwh6u6wkm2ly" path="res://Other assets/MainMenuBackground.jpg" id="1_rhyjg"]
+[ext_resource type="Texture2D" uid="uid://bvobncjjaxit7" path="res://Game Files/Main Menu/Horde Survivors logo transparent.png" id="2_fi4ug"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="BackgroundLayer" type="ParallaxLayer" parent="."]
+
+[node name="MainMenuBackground" type="Sprite2D" parent="BackgroundLayer"]
+position = Vector2(574.75, 324.5)
+scale = Vector2(1.46306, 1.46833)
+texture = ExtResource("1_rhyjg")
+
+[node name="HordeSurvivorsLogoTransparent" type="Sprite2D" parent="."]
+position = Vector2(576, 200)
+scale = Vector2(0.382813, 0.324219)
+texture = ExtResource("2_fi4ug")

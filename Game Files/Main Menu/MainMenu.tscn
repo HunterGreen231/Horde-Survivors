@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://day1i3dpibo4q"]
+
+[ext_resource type="Script" path="res://Game Files/Main Menu/MainMenu.gd" id="1_4qbdr"]
+[ext_resource type="PackedScene" uid="uid://djpmn5kc62dsy" path="res://Game Files/Main Menu/MainMenuBG.tscn" id="1_hpf5e"]
+[ext_resource type="PackedScene" uid="uid://cv2ie4i6v3sd0" path="res://Game Files/Main Menu/main_menu_flames.tscn" id="2_m61ed"]
+
+[sub_resource type="Theme" id="Theme_x4lc7"]
+
+[sub_resource type="Texture2DRD" id="Texture2DRD_n7aia"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fm5mk"]
+texture = SubResource("Texture2DRD_n7aia")
+modulate_color = Color(0, 0, 0, 1)
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_4qbdr")
+
+[node name="BG" parent="." instance=ExtResource("1_hpf5e")]
+
+[node name="MainMenuFlames" parent="." instance=ExtResource("2_m61ed")]
+position = Vector2(102, 326)
+
+[node name="MainMenuFlames2" parent="." instance=ExtResource("2_m61ed")]
+position = Vector2(869, 327)
+
+[node name="Play" type="Button" parent="."]
+offset_left = 518.0
+offset_top = 385.0
+offset_right = 641.0
+offset_bottom = 447.0
+theme = SubResource("Theme_x4lc7")
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_fm5mk")
+text = "Play
+"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 515.0
+offset_top = 511.0
+offset_right = 638.0
+offset_bottom = 573.0
+theme = SubResource("Theme_x4lc7")
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_fm5mk")
+text = "Quit
+"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
