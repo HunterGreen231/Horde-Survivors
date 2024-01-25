@@ -6,60 +6,60 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1altq"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_obnk0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gf4cl"]
 atlas = ExtResource("2_brvvw")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_omjcc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_np83m"]
 atlas = ExtResource("2_brvvw")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_14ntm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_fq5dg"]
 atlas = ExtResource("2_brvvw")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nkt78"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovd2c"]
 atlas = ExtResource("2_brvvw")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0pslk"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7b31"]
 atlas = ExtResource("3_xv83k")
-region = Rect2(0, 0, 64, 64)
+region = Rect2(0, 29, 64, 35)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i8len"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ci7uh"]
 atlas = ExtResource("3_xv83k")
-region = Rect2(64, 0, 64, 64)
+region = Rect2(64, 29, 64, 35)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mxvna"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_iyv30"]
 atlas = ExtResource("3_xv83k")
-region = Rect2(128, 0, 64, 64)
+region = Rect2(128, 29, 64, 35)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_17pbs"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_tme1x"]
 atlas = ExtResource("3_xv83k")
-region = Rect2(192, 0, 64, 64)
+region = Rect2(192, 29, 64, 35)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2ewe2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlg41"]
 atlas = ExtResource("3_xv83k")
-region = Rect2(256, 0, 64, 64)
+region = Rect2(256, 29, 64, 35)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yy758"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqk3s"]
 atlas = ExtResource("3_xv83k")
-region = Rect2(320, 0, 64, 64)
+region = Rect2(320, 29, 64, 35)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_jeqkg"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_6lmpx"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_obnk0")
+"texture": SubResource("AtlasTexture_gf4cl")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_omjcc")
+"texture": SubResource("AtlasTexture_np83m")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_14ntm")
+"texture": SubResource("AtlasTexture_fq5dg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nkt78")
+"texture": SubResource("AtlasTexture_ovd2c")
 }],
 "loop": true,
 "name": &"Idle",
@@ -67,35 +67,34 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0pslk")
+"texture": SubResource("AtlasTexture_k7b31")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_i8len")
+"texture": SubResource("AtlasTexture_ci7uh")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mxvna")
+"texture": SubResource("AtlasTexture_iyv30")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_17pbs")
+"texture": SubResource("AtlasTexture_tme1x")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2ewe2")
+"texture": SubResource("AtlasTexture_hlg41")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yy758")
+"texture": SubResource("AtlasTexture_tqk3s")
 }],
 "loop": true,
 "name": &"Run",
 "speed": 5.0
 }]
 
-[sub_resource type="Animation" id="Animation_1stc7"]
-resource_name = "Idle"
-loop_mode = 1
+[sub_resource type="Animation" id="Animation_wnkev"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CharacterBody2D/Idle:animation")
+tracks/0/path = NodePath("PlayerMage/PlayerMageAnimSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -107,7 +106,36 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CharacterBody2D/Idle:frame")
+tracks/1/path = NodePath("PlayerMage/PlayerMageAnimSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_5aad2"]
+resource_name = "Idle"
+length = 0.35
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerMage/PlayerMageAnimSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerMage/PlayerMageAnimSprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -117,64 +145,14 @@ tracks/1/keys = {
 "values": [0, 1, 2, 3]
 }
 
-[sub_resource type="Animation" id="Animation_wnkev"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CharacterBody2D/Idle:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"Idle"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CharacterBody2D/Idle:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CharacterBody2D/Run:animation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"Run"]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("CharacterBody2D/Run:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_h1rwg"]
+[sub_resource type="Animation" id="Animation_vp1mh"]
 resource_name = "Run"
 length = 0.55
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CharacterBody2D/Run:animation")
+tracks/0/path = NodePath("PlayerMage/PlayerMageAnimSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -186,7 +164,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CharacterBody2D/Run:frame")
+tracks/1/path = NodePath("PlayerMage/PlayerMageAnimSprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -198,32 +176,23 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_neryi"]
 _data = {
-"Idle": SubResource("Animation_1stc7"),
+"Idle": SubResource("Animation_5aad2"),
 "RESET": SubResource("Animation_wnkev"),
-"Run": SubResource("Animation_h1rwg")
+"Run": SubResource("Animation_vp1mh")
 }
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="PlayerMage" type="CharacterBody2D"]
 script = ExtResource("1_u8p4y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_1altq")
 
-[node name="Idle" type="AnimatedSprite2D" parent="."]
-texture_filter = 2
-position = Vector2(-1, -2)
-sprite_frames = SubResource("SpriteFrames_jeqkg")
-animation = &"Idle"
-
-[node name="Run" type="AnimatedSprite2D" parent="."]
-visible = false
-texture_filter = 2
-position = Vector2(-5.96046e-08, -16)
-scale = Vector2(0.9375, 0.984375)
-sprite_frames = SubResource("SpriteFrames_jeqkg")
+[node name="PlayerMageAnimSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6lmpx")
 animation = &"Run"
+frame = 3
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="MageAnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_neryi")

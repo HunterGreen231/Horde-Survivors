@@ -4,9 +4,8 @@ extends CharacterBody2D
 var speed: int = 200
 
 # Animation nodes
-@onready var anim = get_node("AnimationPlayer")
-@onready var IdleAnim = get_node("Idle")
-@onready var RunAnim = get_node("Run")
+@onready var mageAnim = get_node("MageAnimationPlayer")
+@onready var mageAnimSprite = get_node("PlayerMageAnimSprite")
 
 func _ready():
 	pass
@@ -28,13 +27,9 @@ func _process(delta):
 
 	# Check if the player is moving
 	if velocity.length() > 0:
-		IdleAnim.visible = false
-		RunAnim.visible = true
-		anim.play("Run")
+		mageAnim.play("Run")
 	else:
-		IdleAnim.visible = true
-		RunAnim.visible = false
-		anim.play("Idle")
+		mageAnim.play("Idle")
 
 	velocity = velocity.normalized() * speed
 
@@ -43,5 +38,4 @@ func _process(delta):
 
 # Function to flip the sprite
 func set_sprite_flip(is_flipped: bool):
-	IdleAnim.flip_h = is_flipped
-	RunAnim.flip_h = is_flipped
+	mageAnimSprite.flip_h = is_flipped
