@@ -4,8 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://b0cmtdkebeosx" path="res://Pixel Crawler - FREE - 1.8/Enemy/Skeleton Crew/Skeleton - Base/Idle/Idle-Sheet.png" id="1_twpok"]
 [ext_resource type="Texture2D" uid="uid://dd4nkla18fsxe" path="res://Pixel Crawler - FREE - 1.8/Enemy/Skeleton Crew/Skeleton - Base/Run/Run-Sheet.png" id="2_blp2d"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_elqc5"]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_s50qh"]
 atlas = ExtResource("1_twpok")
 region = Rect2(0, 0, 32, 32)
@@ -89,14 +87,28 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_elqc5"]
+
 [node name="BaseSkeleton" type="CharacterBody2D"]
 script = ExtResource("1_sqnfq")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_elqc5")
 
 [node name="SkeletonAnimatedSprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_67w3x")
 animation = &"Run"
 frame_progress = 0.427159
+
+[node name="SkeletonArea" type="Area2D" parent="."]
+
+[node name="SkeletonAreaCollisionShape" type="CollisionShape2D" parent="SkeletonArea"]
+visible = false
+shape = SubResource("CapsuleShape2D_elqc5")
+
+[node name="PursuitDelay" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="body_entered" from="SkeletonArea" to="." method="_on_skeleton_area_body_entered"]
+[connection signal="body_exited" from="SkeletonArea" to="." method="_on_skeleton_area_body_exited"]
+[connection signal="tree_entered" from="SkeletonArea/SkeletonAreaCollisionShape" to="." method="_on_collision_shape_2d_tree_entered"]
+[connection signal="timeout" from="PursuitDelay" to="." method="_on_pursuit_delay_timeout"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://dprbd81a6jsea"]
+[gd_scene load_steps=31 format=3 uid="uid://dprbd81a6jsea"]
 
 [ext_resource type="Script" path="res://Game Files/Players/player_mage.gd" id="1_u8p4y"]
 [ext_resource type="Texture2D" uid="uid://cbiwdcufl6hxe" path="res://Pixel Crawler - FREE - 1.8/Heroes/Wizzard/Idle/Idle-Sheet.png" id="2_brvvw"]
 [ext_resource type="Texture2D" uid="uid://bfvbujg7dd8dc" path="res://Pixel Crawler - FREE - 1.8/Heroes/Wizzard/Run/Run-Sheet.png" id="3_xv83k"]
+[ext_resource type="Texture2D" uid="uid://bkeqkynow57v1" path="res://Retro effects/Retro Impact Effect A.png" id="4_wirpm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1altq"]
 
@@ -89,33 +90,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Animation" id="Animation_wnkev"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerMage/PlayerMageAnimSprite:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"Idle"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerMage/PlayerMageAnimSprite:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
 [sub_resource type="Animation" id="Animation_5aad2"]
 resource_name = "Idle"
 length = 0.35
@@ -143,6 +117,33 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_wnkev"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerMage/PlayerMageAnimSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerMage/PlayerMageAnimSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_vp1mh"]
@@ -181,6 +182,79 @@ _data = {
 "Run": SubResource("Animation_vp1mh")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcuat"]
+atlas = ExtResource("4_wirpm")
+region = Rect2(0, 1472, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6da3c"]
+atlas = ExtResource("4_wirpm")
+region = Rect2(64, 1472, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8hrt"]
+atlas = ExtResource("4_wirpm")
+region = Rect2(128, 1472, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ed6sd"]
+atlas = ExtResource("4_wirpm")
+region = Rect2(192, 1472, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5d8ik"]
+atlas = ExtResource("4_wirpm")
+region = Rect2(256, 1472, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0hen"]
+atlas = ExtResource("4_wirpm")
+region = Rect2(320, 1472, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8q7m"]
+atlas = ExtResource("4_wirpm")
+region = Rect2(384, 1472, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3enun"]
+atlas = ExtResource("4_wirpm")
+region = Rect2(448, 1472, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mf55n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcuat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6da3c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8hrt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ed6sd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5d8ik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0hen")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8q7m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3enun")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lpo4e"]
+radius = 59.0085
+
 [node name="PlayerMage" type="CharacterBody2D"]
 script = ExtResource("1_u8p4y")
 
@@ -189,8 +263,7 @@ shape = SubResource("CapsuleShape2D_1altq")
 
 [node name="PlayerMageAnimSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6lmpx")
-animation = &"Run"
-frame = 3
+animation = &"Idle"
 
 [node name="MageAnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../..")
@@ -204,3 +277,25 @@ zoom = Vector2(1.5, 1.5)
 limit_left = 0
 limit_top = 0
 limit_bottom = 656
+
+[node name="AttackGroup" type="Node2D" parent="."]
+
+[node name="BasicAttack" type="Node2D" parent="AttackGroup"]
+
+[node name="BasicAttackAnimSprite" type="AnimatedSprite2D" parent="AttackGroup/BasicAttack"]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_mf55n")
+animation = &"Attack"
+
+[node name="BasicAttackArea" type="Area2D" parent="AttackGroup/BasicAttack"]
+
+[node name="BasicAttackCollisionShape" type="CollisionShape2D" parent="AttackGroup/BasicAttack/BasicAttackArea"]
+shape = SubResource("CircleShape2D_lpo4e")
+
+[node name="BasicAttackTimer" type="Timer" parent="AttackGroup/BasicAttack"]
+wait_time = 5.0
+autostart = true
+
+[connection signal="area_entered" from="AttackGroup/BasicAttack/BasicAttackArea" to="." method="_on_basic_attack_area_area_entered"]
+[connection signal="area_exited" from="AttackGroup/BasicAttack/BasicAttackArea" to="." method="_on_basic_attack_area_area_exited"]
+[connection signal="timeout" from="AttackGroup/BasicAttack/BasicAttackTimer" to="." method="_on_basic_attack_timer_timeout"]

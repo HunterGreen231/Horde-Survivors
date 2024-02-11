@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dtehr416dyvcq"]
+
+[node name="HealthBarNode" type="Node2D"]
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_right = 1024.0
+offset_bottom = 27.0
+value = 100.0
